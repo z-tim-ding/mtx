@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Categories</h1>
+    <p>This is a library of blinks, developed by <em>Tim Ding</em></p>
+    <p>The library has the following record counts:</p>
+      <ul>
+        <li><strong>Categories:</strong> {{ num_categories }}</li>
+        <li><strong>Total Books:</strong> {{ num_books }}</li>
+      </ul>
+    <h2><a href="{% url 'categories' %}">Available Categories</a></h2>
+{% endblock %}

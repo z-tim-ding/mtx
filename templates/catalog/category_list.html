@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <h1>Category List</h1>
+    <p>{{ num_categories }} categories</p>
+  {% if category_list %}
+  <ul>
+    {% for category in category_list %}
+      <li>
+        <a href="{% url 'category_books' category.category_id %} ">{{ category.category_name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}       
+{% endblock %}

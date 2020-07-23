@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block content %}
+  {% if book_list %}
+  <ul>
+    {% for book in book_list %}
+      <li>
+        {{ book.title }}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}
+{% endblock %}
