@@ -2,7 +2,7 @@ import os
 import json
 import uuid
 
-WORK_DIR = "C:\\Users\\yoyon\\Desktop\\blinkist_project"
+WORK_DIR = "C:\\Users\\yoyon\\Desktop\\blinkist_project_"
 categories, books = [], []
 book_count, error_count = 0, 0
 
@@ -44,12 +44,12 @@ for dir_name in filter(lambda x: x.endswith("-en"), os.listdir(WORK_DIR)):
             "fields": {
                 "title": book_name,
                 "category_id": category_id,
-                "text": book_text
+                "book_text": book_text
             }
         }
         books.append(book)
 
-    with open(os.path.join(os.path.abspath("../fixtures"), category_name + ".json"), "a+") as f:
+    with open(os.path.join(os.path.abspath("../fixtures"), category_name.replace(" ", "_") + ".json"), "w+") as f:
         f.write(json.dumps(books))
 
 with open(os.path.abspath("../fixtures/categories.json"), "w+") as f:
